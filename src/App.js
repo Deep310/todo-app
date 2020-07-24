@@ -7,7 +7,7 @@ import db from './firebase';
 import firebase from 'firebase';
 
 function App() {
-  const [todos, setTodos] = useState(['abc', 'def'])
+  const [todos, setTodos] = useState([''])
   const [input, setInput] = useState('');
 
   //when my app loads, I need to listen to database and fetch new todos as they get added/removed 
@@ -34,15 +34,15 @@ function App() {
   return (
     <div className="App">
 
-      <h1>Hello World</h1>
+      <h1 className="heading"><span role="img" aria-label="fire">🔥</span> My Todo App <span role="img" aria-label="fire">🔥</span></h1>
       
-      <form>     
+      <form className="form">     
         {/*<input value={input} onChange={event => setInput(event.target.value)}/>*/}
         <FormControl>
           <InputLabel>Write a todo</InputLabel>
           <Input value={input} onChange={event => setInput(event.target.value)} />
         </FormControl>
-
+        
         <Button disabled = {!input} onClick={addTodo} type="submit" variant="contained" color="primary">
           Add todo
         </Button>
